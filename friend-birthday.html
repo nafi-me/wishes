@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #ffe6f0, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #startBtn {
+    padding: 20px 40px;
+    font-size: 22px;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  #startBtn:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+  }
+
+  #cakeContainer {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .cake {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .layer {
+    width: 200px;
+    height: 50px;
+    background-color: #ffb6c1;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .layer.middle {
+    height: 40px;
+    background-color: #ff69b4;
+    bottom: 50px;
+  }
+
+  .layer.top {
+    height: 30px;
+    background-color: #ff3399;
+    bottom: 90px;
+  }
+
+  .candle {
+    width: 12px;
+    height: 40px;
+    background-color: #ffff66;
+    position: absolute;
+    top: -40px;
+    left: 94px;
+    border-radius: 2px;
+  }
+
+  .flame {
+    width: 14px;
+    height: 20px;
+    background-color: orange;
+    position: absolute;
+    top: -20px;
+    left: -1px;
+    border-radius: 50%;
+    animation: flicker 1s infinite;
+    box-shadow: 0 0 10px orange, 0 0 20px yellow;
+  }
+
+  @keyframes flicker {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+  }
+
+  #message {
+    margin-top: 200px;
+    font-size: 20px;
+    color: #4b0082;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<button id="startBtn">Click for Surprise!</button>
+
+<div id="cakeContainer">
+  <div class="cake">
+    <div class="layer top"></div>
+    <div class="layer middle"></div>
+    <div class="layer"></div>
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+  <div id="message">
+    19 years looks good on you, keep shining, keep winning, and must keep fighting against all odds.<br>
+    And finally, keep being awesome.<br>
+    <strong>Happy Birthday!</strong>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('startBtn');
+  const cakeContainer = document.getElementById('cakeContainer');
+
+  button.addEventListener('click', () => {
+    button.style.display = 'none';
+    cakeContainer.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
